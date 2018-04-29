@@ -108,7 +108,7 @@ public class LessonControllerTest {
 		Mockito.when(lessonService.findAllByStartTime(Mockito.anyLong(), Mockito.anyLong())).thenReturn(lessons);
 
 		HttpHeaders headers = new HttpHeaders();
-		headers.add("start", "123456789");
+		headers.add("startPeriod", "123456789");
 		headers.add("end", "123654987");
 
 		RequestEntity request = new RequestEntity(headers, HttpMethod.GET, new URI("/lesson/get-by-period"));

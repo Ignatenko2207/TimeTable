@@ -56,8 +56,8 @@ public class LessonController {
 
 	@GetMapping(path = "/get-by-period", consumes = { MediaType.ALL_VALUE }, produces = {
 			MediaType.APPLICATION_JSON_UTF8_VALUE })
-	ResponseEntity<List<Lesson>> findAllByPeriod(@RequestHeader Long start, @RequestHeader Long end) {
-		List<Lesson> lessons = lessonService.findAllByStartTime(start, end);
+	ResponseEntity<List<Lesson>> findAllByPeriod(@RequestHeader Long startPeriod, @RequestHeader Long end) {
+		List<Lesson> lessons = lessonService.findAllByStartTime(startPeriod, end);
 		if (lessons != null) {
 			return new ResponseEntity<List<Lesson>>(lessons, HttpStatus.OK);
 		}
